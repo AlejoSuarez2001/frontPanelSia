@@ -1,0 +1,11 @@
+export { default as svgGuaraniAutogestion } from './guaraniAutogestion.svg';
+export { default as svgBiblioteca } from './biblioteca.svg';
+export { default as svgDocumentacion } from './documentacion.svg';
+export { default as svgBolsaDeTrabajo } from './bolsaDeTrabajo.svg';
+export { default as svgTurnos } from './turnos.svg';
+export { default as svgBecas } from './becas.svg';
+export { default as svgReservaDeAulas } from './reservaDeAulas.svg';
+export { default as svgAulasVirtuales } from './aulasVirtuales.svg';
+export { default as svgSysGestion } from './sysGestion.svg';
+export { default as svgGuarani } from './guarani.svg';
+export { default as svgBlank } from './blankIcon.svg';

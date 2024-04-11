@@ -7,54 +7,25 @@ import {
   Box,
   Stack,
 } from "@mui/material";
-import svgGuaraniAutogestion from "./icons/guaraniAutogestion.svg";
-import svgBiblioteca from "./icons/biblioteca.svg";
-import svgDocumentacion from "./icons/documentacion.svg";
-import svgBolsaDeTrabajo from "./icons/bolsaDeTrabajo.svg";
-import svgTurnos from "./icons/turnos.svg";
-import svgBecas from "./icons/becas.svg";
-import svgReservaDeAulas from "./icons/reservaDeAulas.svg";
-import svgAulasVirtuales from "./icons/aulasVirtuales.svg";
-import svgSysGestion from "./icons/sysGestion.svg";
-import svgGuarani from "./icons/guarani.svg";
-import svgBlank from "./icons/blankIcon.svg";
+
+import * as icons from "./icons/exportIcons";
+
+const iconMapping = {
+  guaraniAutogestion: icons.svgGuaraniAutogestion,
+  biblioteca: icons.svgBiblioteca,
+  documentacion: icons.svgDocumentacion,
+  bolsaDeTrabajo: icons.svgBolsaDeTrabajo,
+  turnos: icons.svgTurnos,
+  becas: icons.svgBecas,
+  reservaDeAulas: icons.svgReservaDeAulas,
+  aulasVirtuales: icons.svgAulasVirtuales,
+  sysGestion: icons.svgSysGestion,
+  guarani: icons.svgGuarani,
+};
 
 function CardComponent(props) {
   const { titulo, descripcion, svg } = props;
-  var svgFile;
-
-  switch (svg) {
-    case "guaraniAutogestion":
-      svgFile = svgGuaraniAutogestion;
-      break;
-    case "biblioteca":
-      svgFile = svgBiblioteca;
-      break;
-    case "documentacion":
-      svgFile = svgDocumentacion;
-      break;
-    case "bolsaDeTrabajo":
-      svgFile = svgBolsaDeTrabajo;
-      break;
-    case "turnos":
-      svgFile = svgTurnos;
-      break;
-    case "becas":
-      svgFile = svgBecas;
-      break;
-    case "reservaDeAulas":
-      svgFile = svgReservaDeAulas;
-      break;
-    case "aulasVirtuales":
-      svgFile = svgAulasVirtuales;
-      break;
-    case "sysGestion":
-      svgFile = svgSysGestion;
-      break;
-    case "guarani":
-      svgFile = svgGuarani;
-      break;
-  }
+  const SvgIcon = iconMapping[svg];
 
   return (
     <Card
@@ -91,7 +62,7 @@ function CardComponent(props) {
             boxShadow: "-1px 1px 19px 41px rgba(250, 215, 222, 0.87)",
           }}
         >
-          <img width={95} height={95} src={svgFile} alt="" />
+          <img width={95} height={95} src={SvgIcon} alt="" />
         </Stack>
       </Stack>
       <CardContent sx={{ padding: 0 }}>
@@ -131,7 +102,7 @@ function CardComponent(props) {
           Visitar
           <img
             style={{ marginLeft: "5px" }}
-            src={svgBlank}
+            src={icons.svgBlank}
             width={17}
             height={17}
             alt=""
