@@ -8,4 +8,3 @@ export { default as svgReservaDeAulas } from './reservaDeAulas.svg';
 export { default as svgAulasVirtuales } from './aulasVirtuales.svg';
 export { default as svgSysGestion } from './sysGestion.svg';
 export { default as svgGuarani } from './guarani.svg';
-export { default as svgBlank } from './blankIcon.svg';

@@ -1,5 +1,8 @@
-import { Stack } from "@mui/material";
-import Card from "./Card";
+import { Stack, Typography } from "@mui/material";
+import Card from "./componentes/Card";
+import Banner from "./componentes/Banner";
+import Header from "./componentes/Header";
+import MenuImg from "./img/menu.png";
 
 function App() {
   const datos = [
@@ -64,25 +67,44 @@ function App() {
   ];
 
   return (
-    <Stack
-      sx={{
-        flexDirection: "row",
-        alignItems: "center",
-        justifyContent: "center",
-        flexWrap: "wrap",
-        gap: "50px",
-        margin: "50px",
-      }}
-    >
-      {datos.map((item, index) => (
-        <Card
-          key={index}
-          titulo={item.titulo}
-          descripcion={item.descripcion}
-          svg={item.svg}
-        />
-      ))}
-    </Stack>
+    <>
+      <Header />
+      <Stack sx={{ flexDirection: "row" }}>
+        <img width={214} height={838} src={MenuImg}></img>
+        <div>
+          <Banner />
+          <Typography
+            variant="h4"
+            style={{
+              textAlign: "center",
+              marginTop: "40px",
+            }}
+          >
+            Sistemas Institucionales
+          </Typography>
+          <hr style={{ width: "600px", marginBottom: "40px", opacity: ".5" }} />
+          <Stack
+            sx={{
+              flexDirection: "row",
+              alignItems: "center",
+              justifyContent: "center",
+              flexWrap: "wrap",
+              gap: "50px",
+              margin: "50px",
+            }}
+          >
+            {datos.map((item, index) => (
+              <Card
+                key={index}
+                titulo={item.titulo}
+                descripcion={item.descripcion}
+                svg={item.svg}
+              />
+            ))}
+          </Stack>
+        </div>
+      </Stack>
+    </>
   );
 }
 

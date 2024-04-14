@@ -1,14 +1,12 @@
 import {
   Card,
   CardContent,
-  CardActions,
   Typography,
-  Button,
   Box,
   Stack,
 } from "@mui/material";
 
-import * as icons from "./icons/exportIcons";
+import * as icons from "../icons/exportIcons";
 
 const iconMapping = {
   guaraniAutogestion: icons.svgGuaraniAutogestion,
@@ -30,12 +28,14 @@ function CardComponent(props) {
   return (
     <Card
       sx={{
-        width: "330px",
-        height: "375px",
+        width: "275px",
+        height: "340px",
         boxShadow: "3px 2px 11px 0px rgba(103, 103, 103, 0.25)",
         transition: "0.20s",
         textAlign: "center",
         ":hover": {
+          cursor: "pointer",
+          backgroundColor: "#fff2f4",
           boxShadow: "3px 2px 11px 0px rgba(59, 59, 59, 0.25)",
           transform: "translateY(-5px)",
           transition: "0.20s",
@@ -66,10 +66,7 @@ function CardComponent(props) {
         </Stack>
       </Stack>
       <CardContent sx={{ padding: 0 }}>
-        <Typography
-          variant="h6"
-          sx={{ marginBlock: "9px", fontWeight: "800" }}
-        >
+        <Typography variant="h6" sx={{ marginBlock: "9px", fontWeight: "800" }}>
           {titulo}
         </Typography>
         <Typography
@@ -80,35 +77,12 @@ function CardComponent(props) {
             color: "grey",
             padding: "0px 20px",
             height: "54px",
+            marginTop: "22.5px",
           }}
         >
           {descripcion}
         </Typography>
       </CardContent>
-      <CardActions sx={{ justifyContent: "center", padding: 0 }}>
-        <Button
-          variant="contained"
-          sx={{
-            backgroundColor: "#c5415c",
-            padding: "4px 25px",
-            marginBlock: "20px",
-            fontSize: "15px",
-            color: "white",
-            textTransform: "none",
-            ":hover": { backgroundColor: "#b71234" },
-            ":active": { backgroundColor: "#c5415c" },
-          }}
-        >
-          Visitar
-          <img
-            style={{ marginLeft: "5px" }}
-            src={icons.svgBlank}
-            width={17}
-            height={17}
-            alt=""
-          />
-        </Button>
-      </CardActions>
     </Card>
   );
 }
