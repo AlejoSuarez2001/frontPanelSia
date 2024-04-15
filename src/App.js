@@ -82,7 +82,7 @@ function App() {
           >
             Sistemas Institucionales
           </Typography>
-          <hr style={{ width: "600px", marginBottom: "40px", opacity: ".5" }} />
+          <hr style={{ width: "40%", marginBottom: "40px", opacity: ".5" }} />
           <Stack
             sx={{
               flexDirection: "row",
@@ -90,7 +90,7 @@ function App() {
               justifyContent: "center",
               flexWrap: "wrap",
               gap: "50px",
-              margin: "50px",
+              margin: "60px",
             }}
           >
             {datos.map((item, index) => (

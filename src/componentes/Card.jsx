@@ -36,7 +36,7 @@ function CardComponent(props) {
         ":hover": {
           cursor: "pointer",
           backgroundColor: "#fff2f4",
-          boxShadow: "3px 2px 11px 0px rgba(59, 59, 59, 0.25)",
+          boxShadow: "3px 2px 11px 0px rgba(59, 59, 59, 0.35)",
           transform: "translateY(-5px)",
           transition: "0.20s",
         },
