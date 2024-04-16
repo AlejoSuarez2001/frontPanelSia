@@ -1,8 +1,11 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 import Card from "./componentes/Card";
 import Banner from "./componentes/Banner";
 import Header from "./componentes/Header";
+import Beneficios from "./componentes/Beneficios";
 import MenuImg from "./img/menu.png";
+import MenuImg2 from "./img/menu2.png";
+import Titulo from "./componentes/Titulo";
 
 function App() {
   const datos = [
@@ -69,39 +72,60 @@ function App() {
   return (
     <>
       <Header />
+
+      {/**/}
       <Stack sx={{ flexDirection: "row" }}>
-        <img width={214} height={838} src={MenuImg}></img>
+        {/* Menu Ancho 
+        <Stack>
+          <img width={214} height={838} src={MenuImg} alt=""></img>
+          <img
+            width={209}
+            height={5000}
+            src={MenuImg}
+            alt=""
+            style={{ objectFit: "contain", borderRight: "lightgrey 1px solid" }}
+          ></img>
+        </Stack>*/}
+        {/* Menu Angosto*/}
+        <Stack>
+          <img width={67} height={838} src={MenuImg2} alt=""></img>
+          <img
+            width={62}
+            height={5000}
+            src={MenuImg}
+            alt=""
+            style={{ objectFit: "contain", borderRight: "lightgrey 1px solid" }}
+          ></img>
+        </Stack> 
+        {/**/}
+
         <div>
           <Banner />
-          <Typography
-            variant="h4"
-            style={{
-              textAlign: "center",
-              marginTop: "40px",
-            }}
-          >
-            Sistemas Institucionales
-          </Typography>
-          <hr style={{ width: "40%", marginBottom: "40px", opacity: ".5" }} />
-          <Stack
-            sx={{
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "center",
-              flexWrap: "wrap",
-              gap: "50px",
-              margin: "60px",
-            }}
-          >
-            {datos.map((item, index) => (
-              <Card
-                key={index}
-                titulo={item.titulo}
-                descripcion={item.descripcion}
-                svg={item.svg}
-              />
-            ))}
-          </Stack>
+          <Titulo texto={"Sistemas Institucionales"} />
+          <Box sx={{}}>
+            <Stack
+              sx={{
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+                gap: "50px",
+                margin: "60px",
+              }}
+            >
+              {datos.map((item, index) => (
+                <Card
+                  key={index}
+                  titulo={item.titulo}
+                  descripcion={item.descripcion}
+                  svg={item.svg}
+                />
+              ))}
+            </Stack>
+            <Titulo texto={"Beneficios de su Cuenta Intitucional"} />
+            <Beneficios />
+            <Titulo texto={"Titulo Aparte Descriptivo"} />
+          </Box>
         </div>
       </Stack>
     </>
