@@ -4,6 +4,9 @@ function Header() {
   return (
     <Stack
       sx={{
+        position: "fixed",
+        width: "100%",
+        zIndex: "100",
         color: "white",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -18,7 +21,9 @@ function Header() {
       <Typography sx={{ fontSize: "19px" }}>
         Sistema Integrado de Aplicaciones - SIA
       </Typography>
-      <Typography sx={{ fontSize: "19px" }}>Cerrar Sesion</Typography>
+      <Typography sx={{ fontSize: "19px", marginRight: "50px" }}>
+        Cerrar Sesion
+      </Typography>
     </Stack>
   );
 }

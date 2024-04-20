@@ -6,6 +6,7 @@ import Beneficios from "./componentes/Beneficios";
 import MenuImg from "./img/menu.png";
 import MenuImg2 from "./img/menu2.png";
 import Titulo from "./componentes/Titulo";
+import Footer from "./componentes/Footer";
 
 function App() {
   const datos = [
@@ -72,37 +73,41 @@ function App() {
   return (
     <>
       <Header />
-
       {/**/}
       <Stack sx={{ flexDirection: "row" }}>
-        {/* Menu Ancho 
+        {/* Menu Ancho
         <Stack>
-          <img width={214} height={838} src={MenuImg} alt=""></img>
           <img
-            width={209}
-            height={5000}
+            width={214}
+            height={838}
             src={MenuImg}
             alt=""
-            style={{ objectFit: "contain", borderRight: "lightgrey 1px solid" }}
+            style={{               
+              borderRight: "lightgrey 1px solid",
+              position: "fixed",
+              marginTop: "64px", }}
           ></img>
         </Stack>*/}
-        {/* Menu Angosto*/}
-        <Stack>
-          <img width={67} height={838} src={MenuImg2} alt=""></img>
-          <img
-            width={62}
-            height={5000}
-            src={MenuImg}
-            alt=""
-            style={{ objectFit: "contain", borderRight: "lightgrey 1px solid" }}
-          ></img>
-        </Stack> 
-        {/**/}
 
-        <div>
+        {/* Menu Angosto */}
+        <Stack>
+          <img
+            width={67}
+            height={838}
+            src={MenuImg2}
+            alt=""
+            style={{
+              borderRight: "lightgrey 1px solid",
+              position: "fixed",
+              marginTop: "64px",
+            }}
+          ></img>
+        </Stack>
+        {/**/}
+        <div style={{ marginTop: "64px", marginLeft: "67px" }}>
           <Banner />
           <Titulo texto={"Sistemas Institucionales"} />
-          <Box sx={{}}>
+          <Stack sx={{ alignItems: "center", justifyContent: "center" }}>
             <Stack
               sx={{
                 flexDirection: "row",
@@ -110,7 +115,7 @@ function App() {
                 justifyContent: "center",
                 flexWrap: "wrap",
                 gap: "50px",
-                margin: "60px",
+                width: "90%",
               }}
             >
               {datos.map((item, index) => (
@@ -122,10 +127,16 @@ function App() {
                 />
               ))}
             </Stack>
-            <Titulo texto={"Beneficios de su Cuenta Intitucional"} />
-            <Beneficios />
-            <Titulo texto={"Titulo Aparte Descriptivo"} />
-          </Box>
+          </Stack>
+          <Titulo texto={"Beneficios de su Cuenta Intitucional"} />
+          <Beneficios />
+          <Titulo texto={"Titulo Aparte Descriptivo"} />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <Footer />
         </div>
       </Stack>
     </>

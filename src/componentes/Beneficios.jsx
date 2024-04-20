@@ -1,13 +1,16 @@
 import React from "react";
-import Typography from "@mui/material/Typography";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import {
+  Typography,
+  List,
+  ListItem,
+  ListItemIcon,
+  Grid,
+  Button,
+  Box,
+  useMediaQuery,
+} from "@mui/material";
 import DoneIcon from "@mui/icons-material/Done";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import Grid from "@mui/material/Grid";
-import Button from "@mui/material/Button";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import Box from "@mui/material/Box";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import imgBeneficios from "../img/imgBeneficios.png";
 
 const beneficiosLista = [
@@ -15,7 +18,6 @@ const beneficiosLista = [
   "Zoom PRO",
   "JetBrains",
   "LucidChart",
-  "Entre otros..",
 ];
 
 const openLink = () => {
@@ -45,28 +47,31 @@ const renderButton = () => (
 );
 
 export default function Beneficios() {
-  const desktop = useMediaQuery("(min-width:800px)");
+  const matches = useMediaQuery("(min-width:800px)");
 
   return (
     <Grid container direction="row-reverse" sx={{ backgroundColor: "#ffeef1" }}>
-      <Grid item xs={desktop ? 6 : 12} sx={{ padding: "50px" }}>
+      <Grid
+        item
+        xs={matches ? 6 : 12}
+        sx={{ padding: matches ? "50px" : "25px" }}
+      >
         <Grid container direction="column">
           <Grid item xs={12}>
             <br />
             <Typography
-              variant="h5"
-              style={{
-                textAlign: desktop ? "left" : "center",
-                color: "#b71234",
-                fontWeight: "bold",
-              }}
+              textAlign={matches ? "left" : "center"}
+              color="#b71234"
+              fontWeight="bold"
+              fontSize={matches ? "23px" : "20px"}
+              marginBlock="10px"
+              sx={{ marginBlock: "10px" }}
             >
-              Tu cuenta institucional cuenta con diversos beneficios e
+              Tu cuenta institucional cuenta con diversos servicios e
               aplicaciones
             </Typography>
-            <br />
             <Typography variant="body1">
-              <List>
+              <List sx={{ marginBlock: "20px" }}>
                 {beneficiosLista.map((item, index) => (
                   <ListItem
                     key={index}
@@ -83,26 +88,43 @@ export default function Beneficios() {
                     {item}
                   </ListItem>
                 ))}
+                <ListItem
+                  sx={{
+                    color: "#212121",
+                    fontWeight: "bold",
+                    paddingLeft: "0px",
+                    paddingRight: "0px",
+                  }}
+                >
+                  <ListItemIcon>
+                    <MoreHorizIcon
+                      sx={{
+                        color: "#b71234",
+                        position: "relative",
+                        top: "2px",
+                      }}
+                    />
+                  </ListItemIcon>
+                  Entre otros
+                </ListItem>
               </List>
             </Typography>
-            <br />
-            {!desktop ? (
+            {!matches && (
               <Box
                 sx={{
                   display: "flex",
-                  alignItems: "center",
                   justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
                 {renderButton()}
               </Box>
-            ) : (
-              renderButton()
             )}
+            {matches && renderButton()}
           </Grid>
         </Grid>
       </Grid>
-      {desktop ? (
+      {matches && (
         <Grid
           item
           xs={6}
@@ -124,7 +146,7 @@ export default function Beneficios() {
             }}
           />
         </Grid>
-      ) : null}
+      )}
     </Grid>
   );
 }

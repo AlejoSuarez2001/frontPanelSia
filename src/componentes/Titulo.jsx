@@ -1,15 +1,17 @@
-import { Typography } from "@mui/material";
+import { Typography, useMediaQuery } from "@mui/material";
 
 function Titulo(props) {
   const { texto } = props;
+  const matches = useMediaQuery("(min-width:800px)");
 
   return (
     <>
       <Typography
-        variant="h4"
         style={{
           textAlign: "center",
           marginTop: "55px",
+          padding: "0 15px",
+          fontSize: matches ? "30px" : "25px",
         }}
       >
         {texto}
