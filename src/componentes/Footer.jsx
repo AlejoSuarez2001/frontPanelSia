@@ -16,6 +16,7 @@ function Footer() {
       component="footer"
       paddingBlock={"50px"}
       backgroundColor={"#c5415c"}
+      marginTop={"60px"}
       sx={{
         color: (theme) => theme.palette.primary.contrastText,
       }}

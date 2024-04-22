@@ -41,7 +41,7 @@ function Banner() {
             maxWidth: "600px",
             padding: "20px",
             fontWeight: matches ? "bold" : "200",
-            fontSize: matches ? "18px" : "16px",
+            fontSize: matches ? "19px" : "16px",
           }}
         >
           Se encuentra en el portal de acceso a los servicios que provee la

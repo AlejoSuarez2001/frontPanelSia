@@ -16,7 +16,7 @@ function Titulo(props) {
       >
         {texto}
       </Typography>
-      <hr style={{ width: "40%", marginBottom: "40px", opacity: ".5" }} />
+      <hr style={{ width: "30%", marginBottom: "40px", opacity: ".5" }} />
     </>
   );
 }

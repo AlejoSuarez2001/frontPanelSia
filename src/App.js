@@ -5,6 +5,7 @@ import Header from "./componentes/Header";
 import Beneficios from "./componentes/Beneficios";
 import MenuImg from "./img/menu.png";
 import MenuImg2 from "./img/menu2.png";
+import Noticias from "./img/noticias.png";
 import Titulo from "./componentes/Titulo";
 import Footer from "./componentes/Footer";
 
@@ -75,21 +76,22 @@ function App() {
       <Header />
       {/**/}
       <Stack sx={{ flexDirection: "row" }}>
-        {/* Menu Ancho
+        {/* Menu Ancho*/}
         <Stack>
           <img
             width={214}
             height={838}
             src={MenuImg}
             alt=""
-            style={{               
+            style={{
               borderRight: "lightgrey 1px solid",
               position: "fixed",
-              marginTop: "64px", }}
+              marginTop: "64px",
+            }}
           ></img>
-        </Stack>*/}
+        </Stack>
 
-        {/* Menu Angosto */}
+        {/* Menu Angosto 
         <Stack>
           <img
             width={67}
@@ -102,9 +104,9 @@ function App() {
               marginTop: "64px",
             }}
           ></img>
-        </Stack>
+        </Stack>*/}
         {/**/}
-        <div style={{ marginTop: "64px", marginLeft: "67px" }}>
+        <div style={{ marginTop: "64px", marginLeft: "214px" }}>
           <Banner />
           <Titulo texto={"Sistemas Institucionales"} />
           <Stack sx={{ alignItems: "center", justifyContent: "center" }}>
@@ -130,12 +132,22 @@ function App() {
           </Stack>
           <Titulo texto={"Beneficios de su Cuenta Intitucional"} />
           <Beneficios />
-          <Titulo texto={"Titulo Aparte Descriptivo"} />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
+          <Titulo texto={"Noticias"} />
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <img
+              width={"1600px"}
+              height={"450px"}
+              src={Noticias}
+              alt=""
+              style={{}}
+            ></img>
+          </div>
           <Footer />
         </div>
       </Stack>
