@@ -1,7 +1,6 @@
 import { Typography, useMediaQuery } from "@mui/material";
 
-function Titulo(props) {
-  const { texto } = props;
+function Titulo({ texto }) {
   const matches = useMediaQuery("(min-width:800px)");
 
   return (

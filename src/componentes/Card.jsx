@@ -1,10 +1,4 @@
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Stack,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box, Stack } from "@mui/material";
 
 import * as icons from "../icons/exportIcons";
 
@@ -21,8 +15,7 @@ const iconMapping = {
   guarani: icons.svgGuarani,
 };
 
-function CardComponent(props) {
-  const { titulo, descripcion, svg } = props;
+function CardComponent({ titulo, descripcion, svg }) {
   const SvgIcon = iconMapping[svg];
 
   return (
